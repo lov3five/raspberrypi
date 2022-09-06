@@ -1,3 +1,5 @@
+
+from time import sleep
 import RPi.GPIO as GPIO
 import Adafruit_DHT #library of sensor DHT
 
@@ -17,15 +19,19 @@ while True:
     if temperature > 27:
         GPIO.output(GREEN_LED_PIN, GPIO.LOW)
         GPIO.output(YELLOW_LED_PIN, GPIO.LOW)
+
         GPIO.output(RED_LED_PIN, GPIO.HIGH)
         print("Temp={0:0.1f}*C =>> RED turn on")
     elif temperature <= 27 and temperature >= 20:
         GPIO.output(GREEN_LED_PIN, GPIO.LOW)
         GPIO.output(RED_LED_PIN, GPIO.LOW)
+
         GPIO.output(YELLOW_LED_PIN, GPIO.HIGH)
         print("Temp={0:0.1f}*C =>> YELLOW turn on")
     elif temperature < 20:
         GPIO.output(RED_LED_PIN, GPIO.LOW)
         GPIO.output(YELLOW_LED_PIN, GPIO.LOW)
+
         GPIO.output(GREEN_LED_PIN, GPIO.HIGH)
         print("Temp={0:0.1f}*C =>> GREEN turn on")
+    sleep(2)
