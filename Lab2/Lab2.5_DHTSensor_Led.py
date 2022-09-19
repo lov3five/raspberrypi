@@ -30,7 +30,6 @@ while True:
     elif temperature < 20:
         GPIO.output(RED_LED_PIN, GPIO.LOW)
         GPIO.output(YELLOW_LED_PIN, GPIO.LOW)
-
         GPIO.output(GREEN_LED_PIN, GPIO.HIGH)
         print("Temp={0:0.1f}*C =>> GREEN turn on".format(temperature, humidity))
     sleep(2)

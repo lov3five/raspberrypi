@@ -1,6 +1,5 @@
 from time import sleep
 import RPi.GPIO as GPIO
-import Adafruit_DHT #library of sensor DHT
 
 GPIO.setmode(GPIO.BCM)
 RED_LED_PIN = 17 #GPIO = 11 BOARD
